@@ -137,7 +137,7 @@
   width: 4px;
   height: 28px;
   background: linear-gradient(135deg, #fa8b1f 0%, #e6793d 100%);
-  border-radius: var(--radius-full);
+  border-radius: 50%;
 }
 
 /* Responsive Design */

@@ -7,13 +7,18 @@ export default function AddTaskForm() {
   const { addTask } = useTasks();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [errorTitle, setErrorTitle] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title.trim()) return;
+    if (!title.trim()) {
+      setErrorTitle("Title is required");
+      return;
+    }
     addTask(title, description);
     setTitle("");
     setDescription("");
+    setErrorTitle("");
   };
 
   return (
@@ -27,6 +32,7 @@ export default function AddTaskForm() {
           placeholder="Title task"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          error={errorTitle}
           required
         />
 
