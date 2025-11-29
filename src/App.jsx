@@ -1,5 +1,8 @@
 import "./styles/App.css";
 import { TasksProvider } from "./contexts/TasksContext";
+import AddTaskForm from "./features/AddTaskForm";
+import FilterTask from "./features/FilterTask";
+import TaskList from "./features/TaskList";
 
 const App = () => {
   return (
@@ -14,11 +17,12 @@ const App = () => {
 
         <main className="app-main">
           <section className="left-column">
-            <h2>Add New Task</h2>
-            <h2>Filter</h2>
+            <AddTaskForm />
+            <FilterTask />
           </section>
           <section className="right-column">
             <h2 className="section-title">Tasks</h2>
+            <TaskList />
           </section>
         </main>
       </div>

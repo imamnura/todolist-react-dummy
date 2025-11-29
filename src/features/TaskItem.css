@@ -1,0 +1,137 @@
+.task-item {
+  padding: 1.25rem;
+  border-left: 4px solid transparent;
+  animation: slideIn 0.4s ease-out backwards;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.task-item:hover {
+  border-left-color: #fa8b1f;
+}
+
+.task-completed {
+  border-left-color: #e6793d !important;
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.05) 0%,
+    #111827 100%
+  );
+}
+
+.task-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.task-title-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.task-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f3f4f6;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+}
+
+.task-title-completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: #9ca3af;
+}
+
+.task-title-input {
+  flex: 1;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border: 2px solid #374151;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  color: #f3f4f6;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.task-title-input:focus {
+  border-color: #fa8b1f;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.task-body {
+  margin: 0 0 1rem 2.75rem;
+}
+
+.task-description {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.task-desc-input {
+  width: 100%;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border: 2px solid #374151;
+  border-radius: 8px;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.95rem;
+  color: #f3f4f6;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.6;
+  transition: all 0.25s ease;
+}
+
+.task-desc-input:focus {
+  border-color: #fa8b1f;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.task-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .task-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    width: 100%;
+  }
+
+  .task-actions button {
+    flex: 1;
+  }
+}
